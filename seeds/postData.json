@@ -1,0 +1,17 @@
+[
+  {
+    "postTitle": "Day 1",
+    "postContent": "This is comment 1",
+    "userId": 1
+  },
+  {
+    "postTitle": "Day 2",
+    "postContent": "This is comment 2",
+    "userId": 2
+  },
+  {
+    "postTitle": "Day 3",
+    "postContent": "This is comment 3",
+    "userId": 3
+  }
+]
