@@ -4,9 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
+  <title>The Tech Blog</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
 </head>
 
 <body>
@@ -18,8 +20,10 @@
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
+       <li> <a href="/homepage">Home</a> </li>
+       <li><a href="/dashboard">Dashboard</a></li>
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
+         |
         <button class="no-button" id="logout">logout</button>
         {{else}}
         <a href="/login">login</a>
@@ -31,7 +35,9 @@
       {{{ body }}}
     </main>
     <footer>
-      
+      <h2>Contact information</h2>
+      <div class="footerLinks">
+         <a href="https://github.com/hovigmk" class="links">Hovig</a>
     </footer>
   </div>
 
