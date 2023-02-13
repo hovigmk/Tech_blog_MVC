@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
     // serialize the data
     const posts = postData.map((post) => post.get({ plain: true }));
     // we should render all the posts here - DONE!
-    res.render('all-posts-admin', { posts, loggedIn: req.session.loggedIn});
+    res.render('all-posts-admin', { posts, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -24,7 +24,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
     // change the model below, but not the findByPk method. - DONE!
     const postData = await Post.findOne({
       // helping you out with the include here, no changes necessary
-      where: {id: req.params.id},
+      where: { id: req.params.id },
       include: [
         User,
         {
@@ -39,7 +39,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
       const post = postData.get({ plain: true });
       // which view should we render for a single-post? - DONE!
       console.log(post);
-      res.render('single-post', { post, loggedIn: req.session.loggedIn});
+      res.render('single-post', { post, loggedIn: req.session.loggedIn });
     } else {
       res.status(404).end();
     }
