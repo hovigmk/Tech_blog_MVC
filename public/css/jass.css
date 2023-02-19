@@ -5,6 +5,12 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+a {
+  color: white;
+}
+nav {
+  font-size: 20px;
+}
 html {
   line-height: 1.15;
   /* 1 */
@@ -356,7 +362,8 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 16px;
   color: #1a1a1a;
 }
@@ -418,12 +425,6 @@ textarea,
 button {
   margin: 0;
 }
-
-a {
-  color: #1b89bc;
-  text-decoration: none;
-}
-
 a:hover {
   color: #065b83;
   text-decoration: underline;
@@ -916,9 +917,9 @@ a:hover {
 }
 
 /* BACKGROUND UTILS */
-.bg-primary {
+/* .bg-primary {
   background-color: #2d3e50 !important;
-}
+} */
 
 .bg-info {
   background-color: #1bbc9b !important;
@@ -1159,8 +1160,8 @@ form [type='radio'] {
   display: inline-block;
 }
 
-label form [type='checkbox'], label
-form [type='radio'] {
+label form [type='checkbox'],
+label form [type='radio'] {
   display: inline-block;
 }
 

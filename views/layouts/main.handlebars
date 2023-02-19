@@ -16,7 +16,7 @@
 
 <body>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
+    <header class="display-flex justify-space-between align-center p-3 mb-2 bg-primary text-white">
       <h1>
         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
         <a href="/">Tech Blog</a>
@@ -26,8 +26,9 @@
         <a href="/">Home</a> 
        <a href="/dashboard">Dashboard</a>
         {{#if logged_in}}
+         <div class="logged-in"><a id="logout" class="login-button no-button">Log out</a>{{session_username}}</div>
          |
-        <button class="no-button" id="logout">logout</button>
+        {{!-- <button class="no-button" id="logout">logout</button> --}}
         {{else}}
         <a href="/login">login</a>
         {{/if}}
@@ -37,7 +38,7 @@
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-    <footer>
+    <footer class="p-3 mb-2 bg-primary text-white">
       <h2>Contact information</h2>
       <div class="footerLinks">
          <a href="https://github.com/hovigmk" class="links">Hovig</a>
@@ -46,7 +47,7 @@
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
-  <script src="/public/js/logout.js"></script>
+  <script src="/js/logout.js"></script>
   {{/if}}
 </body>
 

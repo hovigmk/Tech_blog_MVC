@@ -1,0 +1,37 @@
+a {
+  color: white;
+}
+
+/*footer*/
+
+footer {
+  display: block;
+  align-items: bottom;
+  justify-content: center;
+  flex-direction: column;
+  /* background-color: #101010; */
+  color: #ffff;
+  height: 150px;
+  padding: 10;
+  margin: 10rem 0 0 0;
+}
+
+.footer h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 2.1rem 0 2rem 0;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  color: white;
+}
