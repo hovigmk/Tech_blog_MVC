@@ -1,18 +1,17 @@
 <!-- Loop over each object in the posts array -->
+
 {{#each posts as |post|}}
   <div class='bg-light d-flex justify-content-between'>
-    {{! <div class='row mb-4 post'>
-      <div class='col-md-5'> }}
+    <a href='/comment'>
+      <div class='left-text'> <h2> {{post.post_text}} </h2> </div>
+      <div class='right-text'>
+        <h4>Created by
+          {{post.user.name}}
+          on
+          {{format_date post.date_created}}
+        </h4></div>
+    </a>
 
-    <div class='left-text'> <h2> {{post.post_text}} </h2> </div>
-    <div class='right-text'>
-      <h4>Created by
-        {{post.user.name}}
-        on
-        {{format_date post.date_created}}
-      </h4></div>
-    {{! </div>
-    </div> }}
   </div>
 
 {{/each}}
