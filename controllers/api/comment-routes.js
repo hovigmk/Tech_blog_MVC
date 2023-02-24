@@ -3,19 +3,19 @@ const { Comment } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
- try{ 
-  const commentData = await Comment.findAll({
-    include: [User],
-  });
-// serialize the data
-  const comments = commentData.map((comment) => comment.get({ plain: true }));
+  try {
+    const commentData = await Comment.findAll({
+      include: [User],
+    });
+    // serialize the data
+    const comments = commentData.map((comment) => comment.get({ plain: true }));
 
-  console.log(comments);
-  
-  res.render('single-post', {comments, loggedIn: req.session.loggedIn});
-} catch(err) {
+    console.log(comments);
+
+    res.render('single-post', { comments, logged_in: req.session.logged_in });
+  } catch (err) {
     res.status(500).json(err);
-}
+  }
 });
 
 router.post('/', withAuth, async (req, res) => {
@@ -24,7 +24,7 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
       ...body,
-      userId: req.session.userId,
+      user_id: req.session.user_id,
     });
     res.json(newComment);
   } catch (err) {

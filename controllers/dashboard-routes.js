@@ -7,7 +7,7 @@ router.get('/', withAuth, (req, res) => {
     where: {
       user_id: req.session.user_id,
     },
-    attributes: ['id', 'title', 'user_id', 'date_created'],
+    attributes: ['id', 'title', 'user_id', 'post_text', 'date_created'],
     include: [
       {
         model: Comment,

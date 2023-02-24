@@ -1,17 +1,38 @@
 <!-- Loop over each object in the posts array -->
 
 {{#each posts as |post|}}
-  <div class='bg-light d-flex justify-content-between'>
-    <a href='/comment'>
-      <div class='left-text'> <h2> {{post.post_text}} </h2> </div>
-      <div class='right-text'>
-        <h4>Created by
-          {{post.user.name}}
-          on
-          {{format_date post.date_created}}
-        </h4></div>
-    </a>
+  <div class='card w-100 bg-primary d-flex justify-content-between'>
+    <div class='card-body'>
 
+      <h5 class='card-title'>Post</h5>
+      <div class='content has-text-justified'>
+        {{post.title}}
+
+      </div>
+      <div class='card-content'>
+        <div class='content has-text-justified'>
+          {{post.post_text}}
+        </div>
+      </div>
+      <div class='comment box'>
+        <div class='btn border-primary'>Comment
+          {{#if logged_in}}
+            <a href='/comment'></a>
+          {{else}}
+            <a href='/login'></a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='card border-dark mb-3'>
+    <div class='card-body text-dark'>
+      <h4>Created by
+        {{post.user.name}}
+        on
+        {{format_date post.date_created}}
+      </h4>
+    </div>
   </div>
 
 {{/each}}

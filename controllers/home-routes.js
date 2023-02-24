@@ -4,14 +4,14 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // we need to get all Posts and include the User for each (change lines 8 and 9) - DONE!
+    // we need to get all Posts
     const postData = await Post.findAll({
       include: [User],
     });
     // serialize the data
     const posts = postData.map((post) => post.get({ plain: true }));
     // we should render all the posts here - DONE!
-    res.render('homepage', { posts, loggedIn: req.session.loggedIn });
+    res.render('homepage', { posts, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -39,7 +39,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
       const post = postData.get({ plain: true });
       // which view should we render for a single-post? - DONE!
       console.log(post);
-      res.render('single-post', { post, loggedIn: req.session.loggedIn });
+      res.render('single-post', { post, logged_in: req.session.logged_in });
     } else {
       res.status(404).end();
     }
@@ -50,7 +50,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
 
 // giving you the login and signup route pieces below, no changes needed.
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/dashboard');
     return;
   }
@@ -58,7 +58,7 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/dashboard');
     return;
   }
