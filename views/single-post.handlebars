@@ -17,8 +17,7 @@
             {{post.post_text}}
         </div>
             <div class="is-pulled-right">
-                <b>{{post.user.name}}</b> | 
-             
+                <b>{{post.user.name}}</b> 
                  | {{format_date post.createdAt}} | <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
             </div>
         
