@@ -35,3 +35,16 @@ footer {
 .nav {
   color: white;
 }
+
+.page-info {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.comment-user {
+  display: inline-block;
+}
+
+.edit-button {
+  float: right;
+}

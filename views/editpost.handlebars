@@ -9,7 +9,7 @@
     </div>
     <div>
       Posted by you on
-      {{format_date post.created_at}}
+      {{format_date post.date_created}}
       
       {{post.comments.length}}
       {{format_plural 'comment' post.comments.length}}
@@ -22,6 +22,7 @@
     <button type='button' class='delete-post-btn'>Delete Post</button>
   </form>
 </div>
-
+{{/if}}
 <script src='/js/editpost.js'></script>
 <script src='/js/deletepost.js'></script>
+<script src='/js/comment.js'></script>

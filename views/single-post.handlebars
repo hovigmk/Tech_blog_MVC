@@ -18,8 +18,7 @@
         </div>
             <div class="is-pulled-right">
                 <b>{{post.user.name}}</b> | 
-                {{!-- <a href="https://twitter.com/{{user.twitter}}"><i class="fab fa-twitter"></i></a> 
-                <a href="https://github.com/{{user.github}}"><i class="fab fa-github"></i></a> --}}
+             
                  | {{format_date post.createdAt}} | <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
             </div>
         
@@ -28,7 +27,7 @@
     <div class="commentbtn">
       {{#if logged_in}}
       <div class="comment-input">
-        <form class="comment-form form-inline" data-userId={{id}} data-user_name="{{req.session.userName}}">
+        <form class="comment-form form-inline" data-userId={{id}} data-user_name="{{req.session.username}}">
           <textarea id="comment-box" placeholder="Comment here" rows="3" type="text" name="comment-body">
           </textarea>
           <button type="submit" id="submit-comment" class="submit-comment">Submit</button>
@@ -49,10 +48,10 @@
       <div class="comment">
         <div class="comment-user">
           <h3>{{comment.user.name}}</h3>
-          <h4>{{format_date comment.createdAt}}</h4>
+           <h4>{{comment.comment_content}}</h4>
         </div>
         <div class="comment-text">
-          <h4>{{comment.comment_content}}</h4>
+          <h4>{{format_date comment.createdAt}}</h4>
         </div>
       </div>
       {{/each}}

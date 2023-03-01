@@ -38,7 +38,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ['id', 'title', 'content', 'created_at'],
+    attributes: ['id', 'title', 'post_text', 'created_at'],
     include: [
       {
         model: User,
@@ -61,7 +61,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       }
 
       const post = dbPostData.get({ plain: true });
-      res.render('edit-post', { post, logged_in: true });
+      res.render('editpost', { post, logged_in: true });
     })
     .catch((err) => {
       console.log(err);

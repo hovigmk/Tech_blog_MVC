@@ -1,32 +1,43 @@
+<div class="font-weight-bold page-info"> Your Posts
+</div>
 {{#each posts as |post|}}
+ 
   <div class='card mb-6'>
     <header class='card-header card-header-title has-background-grey-lighter'>
 
       <div class='column'>
-        <p class='has-text-primary-light'></p>
         <a
           href='/post/{{post.id}}'
           class='has-text-black is-capitalized is-pulled-left'
         >{{post.title}} </a>
+       <a href="/dashboard/edit/{{post.id}}"><button class="btn border-primary edit-button">Edit Post</button></a>
       </div>
-
+     
     </header>
-
-    <div class='card-content'>
-      <div class='content has-text-justified'>
+       <div class='card mb-6'>
         {{post.post_text}}
+        </div>
+
+     <div class="comment-box">
+      <h2>Comments: {{post.comments.length}}</h2>
+
+      {{#if post.comments.length}}
+
+      {{#each post.comments as |comment|}}
+      <div class="comment">
+        <div class="comment-user">
+          <h3>User: {{comment.user.name}}</h3>
+           <div class="comment-text">
+          <h4>Comment: {{comment.comment_content}}</h4>
+        </div>
+
+        </div>
+        <h4>{{format_date comment.createdAt}}</h4>
       </div>
-      <div class='is-pulled-right'>
-        <b>{{user.name}}</b>
-
-        {{format_date created_at}}
-
-        <a href='/post/{{id}}'>{{comments.length}}
-          {{format_plural 'comment' comments.length}}</a>
-      </div>
-
+      {{/each}}
+      {{/if}}
     </div>
-  </div>
+  
 {{/each}}
 <div class='card'>
   <h2 class='card-header'>Create New Post</h2>

@@ -20,9 +20,7 @@ router.get('/', async (req, res) => {
 // get single post
 router.get('/post/:id', withAuth, async (req, res) => {
   try {
-    
     const postData = await Post.findOne({
-      
       where: { id: req.params.id },
       include: [
         User,
@@ -36,7 +34,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
     if (postData) {
       // serialize the data
       const post = postData.get({ plain: true });
-      // which view should we render for a single-post? - DONE!
+
       console.log(post);
       res.render('single-post', { post, logged_in: req.session.logged_in });
     } else {
