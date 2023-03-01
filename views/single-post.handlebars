@@ -1,0 +1,66 @@
+<div class="card mb-6">
+  <header class="card-header card-header-title has-background-grey-lighter">
+    
+        <div class="column">
+            <p class=" has-text-primary-light"></p>
+      <a href="/post/{{id}}"  class="has-text-black is-capitalized is-pulled-left">{{post.title}} </a></p>
+      </div>
+
+      <div class="column">
+      <span class=""> </span>
+      </div>
+    
+  </header>
+
+    <div class="card-content">
+        <div class="content has-text-justified">
+            {{post.post_text}}
+        </div>
+            <div class="is-pulled-right">
+                <b>{{post.user.name}}</b> | 
+                {{!-- <a href="https://twitter.com/{{user.twitter}}"><i class="fab fa-twitter"></i></a> 
+                <a href="https://github.com/{{user.github}}"><i class="fab fa-github"></i></a> --}}
+                 | {{format_date post.createdAt}} | <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+            </div>
+        
+    </div>
+<section class="section-comments">
+    <div class="commentbtn">
+      {{#if logged_in}}
+      <div class="comment-input">
+        <form class="comment-form form-inline" data-userId={{id}} data-user_name="{{req.session.userName}}">
+          <textarea id="comment-box" placeholder="Comment here" rows="3" type="text" name="comment-body">
+          </textarea>
+          <button type="submit" id="submit-comment" class="submit-comment">Submit</button>
+        </form>
+
+        {{else}}
+        <a href="/login" class="login-comment wide">Login to comment</a>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="comment-box">
+      <h2>Comments: {{post.comments.length}}</h2>
+
+      {{#if post.comments.length}}
+
+      {{#each post.comments as |comment|}}
+      <div class="comment">
+        <div class="comment-user">
+          <h3>{{comment.user.name}}</h3>
+          <h4>{{format_date comment.createdAt}}</h4>
+        </div>
+        <div class="comment-text">
+          <h4>{{comment.comment_content}}</h4>
+        </div>
+      </div>
+      {{/each}}
+      {{/if}}
+    </div>
+
+  </section>
+
+</div>
+
+<script src="/js/comment.js"></script>

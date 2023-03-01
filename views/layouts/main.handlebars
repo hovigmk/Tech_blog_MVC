@@ -26,10 +26,10 @@
       <nav>
         <!-- Conditionally render login or logout links -->
         <a href="/">Home</a> 
-       <a href="/dashboard">Dashboard</a>
+     
         {{#if logged_in}}
          <div class="logged-in"><a id="logout" class="login-button no-button">Log out</a></div>
-      
+        <a href="/dashboard"> My Dashboard</a>
         {{!-- <button class="no-button" id="logout">logout</button> --}}
         {{else}}
         <a href="/login">login</a>

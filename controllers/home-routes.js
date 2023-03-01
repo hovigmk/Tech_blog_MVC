@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     });
     // serialize the data
     const posts = postData.map((post) => post.get({ plain: true }));
-    // we should render all the posts here - DONE!
+
     res.render('homepage', { posts, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
@@ -20,10 +20,9 @@ router.get('/', async (req, res) => {
 // get single post
 router.get('/post/:id', withAuth, async (req, res) => {
   try {
-    // what should we pass here? we need to get some data passed via the request body (something.something.id?)
-    // change the model below, but not the findByPk method. - DONE!
+    
     const postData = await Post.findOne({
-      // helping you out with the include here, no changes necessary
+      
       where: { id: req.params.id },
       include: [
         User,
