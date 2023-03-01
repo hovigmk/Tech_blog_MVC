@@ -38,7 +38,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ['id', 'title', 'post_text', 'created_at'],
+    attributes: ['id', 'title', 'post_text', 'date_created'],
     include: [
       {
         model: User,
