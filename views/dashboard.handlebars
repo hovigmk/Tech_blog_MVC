@@ -10,7 +10,7 @@
           href='/post/{{post.id}}'
           class='has-text-black is-capitalized is-pulled-left'
         >{{post.title}} </a>
-       <a href="/dashboard/edit/{{post.id}}"><button class="btn border-primary edit-button">Edit Post</button></a>
+       <a href="/dashboard/edit/{{post.id}}"><button class="btn border-primary edit-button">Edit/Delete Post</button></a>
       </div>
      
     </header>
@@ -32,7 +32,7 @@
         </div>
 
         </div>
-        <h4>{{format_date comment.createdAt}}</h4>
+        <h4>{{format_date comment.created_at}}</h4>
       </div>
       {{/each}}
       {{/if}}

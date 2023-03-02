@@ -27,8 +27,8 @@
       {{#if logged_in}}
       <div class="comment-input">
         <form class="comment-form form-inline" data-userId={{id}} data-user_name="{{req.session.username}}">
-          <textarea id="comment-box" placeholder="Comment here" rows="3" type="text" name="comment-body">
-          </textarea>
+          <textarea id="comment-box" placeholder="Comment here" rows="3" type="text" name="comment-body"></textarea>
+         
           <button type="submit" id="submit-comment" class="submit-comment">Submit</button>
         </form>
 
