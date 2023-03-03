@@ -42,4 +42,14 @@ THEN I am signed out of the site
 WHEN I am idle on the site for more than a set time  
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments  
 
+## Installation
 
+Create the database using SQL shell as shown in the walkthrough video  
+Type "npm run seed" in the terminal to seed the database  
+Type "npm run start" or "node server.js" to run the application  
+Go to your browser and type "localhost:3001" to see the webpage  
+
+## Resources
+Repo Link: https://github.com/hovigmk/Tech_blog  
+Deployed Link: https://hovigmk.github.io/Tech_blog/  
+[Walkthrough video](./assets/Walkthrough_video.webm)  
