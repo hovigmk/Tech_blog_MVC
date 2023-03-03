@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // we need to get all Posts
+    // getting all Posts
     const postData = await Post.findAll({
       include: [User],
     });
@@ -45,7 +45,6 @@ router.get('/post/:id', withAuth, async (req, res) => {
   }
 });
 
-// giving you the login and signup route pieces below, no changes needed.
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/dashboard');
