@@ -51,5 +51,6 @@ Go to your browser and type "localhost:3001" to see the webpage
 
 ## Resources
 Repo Link: https://github.com/hovigmk/Tech_blog  
-Deployed Link: https://hovigmk.github.io/Tech_blog/  
+Deployed Link: https://hovigmk.github.io/Tech_blog/
+Heroku app link: https://tech-blog-hmk.herokuapp.com/
 [Walkthrough video](./assets/Walkthrough_video.webm)  
